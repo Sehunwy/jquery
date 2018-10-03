@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        var show = 2;
+        $(document).ready(function () {
+            $('ol li').mousemove(function () {
+                $(this).attr('class','move');
+                $(this).siblings().attr('class','');
+                var index = $(this).index();
+                show++;
+                $('ul li').eq(index).css('left','626px');
+                $('ol').css('z-index',show+1);
+                $('ul li').eq(index).css('z-index',show);
+                $('ul li').eq(index).animate({left:'0px'},1000);
+            });
+        });
+
+    </script>
+    <style>
+        ul,li,ol {
+            list-style: none;
+            padding: 0px;
+        }
+        .img {
+            width: 626px;
+            height: 416px;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+        }
+        ul {
+            position: relative;
+        }
+        ul li {
+            position: absolute;
+        }
+        img {
+            width: 626px;
+            height: 416px;
+        }
+
+        ol {
+            position: absolute;
+            z-index: 2;
+            right: 30px;
+            bottom: 0px;
+        }
+
+        ol li {
+            float: left;
+            height: 20px;
+            width: 20px;
+            right: 0px;
+            margin-left: 20px;
+            border: 2px solid #ffffff;
+            margin-top: 10px;
+            text-align: center;
+            background-color: #555555;
+            line-height: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .move {
+            height: 30px;
+            width: 30px;
+            margin-top: 0px;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 30px;
+            border: 2px solid #98bf21;
+            color:  #98bf21;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="img">
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ol>
+    <ul>
+        <li><img src="./images/c1.jpg" alt=""></li>
+        <li><img src="./images/c2.jpg" alt=""></li>
+        <li><img src="./images/c3.jpg" alt=""></li>
+        <li><img src="./images/c4.jpg" alt=""></li>
+    </ul>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('input').click(function () {
+                $('.infor').toggle(1000);
+            })
+        })
+    </script>
+    <style>
+        .name {
+            width: 150px;
+        }
+        .infor {
+            width: 700px;
+            display: block;
+        }
+        .none {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<table border="1px">
+    <tr><td class="name">容祖儿<input type="button" value="隐藏"></td><td class="infor">容祖儿（Joey Yung），1980年6月16日生于中国香港，中国香港女歌手。香港英皇集团旗下艺人。</td></tr>
+    <tr><td class="name">徐佳莹</td><td class="infor">徐佳莹，台湾创作女歌手。2008年参加第三届《超级星光大道》夺得冠军，踏入歌坛。发表《LaLa首张创作专辑》、《理想人生》等作品，创作实力备受肯定。</td></tr>
+    <tr><td class="name">李克勤</td><td class="infor">李克勤，香港著名粤语流行曲歌手、演员、主持人，擅长演绎多种曲风，以浪漫情歌和励志快歌为主，声线以高、清、亮见称，有“零瑕疵歌手”的美誉；曾荣获十大劲歌金曲榜“最受欢迎男歌手”、香港杰出歌手奖、港台最佳流行男歌手等音乐奖项。</td></tr>
+
+</table>
+</body>
+</html>

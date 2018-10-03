@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function () {
+            $('a').mousemove(function (e) {
+                var xx=e.pageX;
+                var yy=e.pageY;
+                var src_li = this.title;
+                console.log("xx"+xx+"  "+yy+" "+src_li);
+                $('#show').attr('class','dislpay_dis');
+                $('#show').css('left',xx+10);
+                $('#show').css('top',yy+10);
+                $('#show').attr('src',src_li);
+            });
+            $('a').mouseout(function (e){
+                $('#show').attr('src','');
+            });
+        })
+    </script>
+    <style>
+        ul {
+            position: relative;
+        }
+
+        ul,li {
+            /*position: absolute;*/
+            list-style: none;
+            float: left;
+        }
+        img {
+            width: 156px;
+            height: 104px;
+        }
+        .cuurent {
+
+            /*margin-left: 10px;*/
+            /*margin-top: 10px;*/
+            cursor: pointer;
+        }
+
+        .all {
+            margin: auto;
+        }
+
+        .dislpay_none {
+            display: none;
+        }
+
+        #show {
+            position: absolute;
+            z-index: 2;
+        }
+        a {
+            display: inline-block;
+            width: 156px;
+            height: 104px;
+            background-color: #ff6600;
+            margin-right: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="all">
+    <img id="show" class="dislpay_none"  alt="">
+    <ul>
+        <li>
+            <a href="" title="./images/c1.jpg">
+                <img class="cuurent" src="./images/c1.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="" title="./images/c2.jpg">
+                <img class="cuurent" src="./images/c2.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="" title="./images/c3.jpg">
+                <img class="cuurent" src="./images/c3.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="" title="./images/c4.jpg">
+                <img class="cuurent" src="./images/c4.jpg" alt="">
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

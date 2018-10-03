@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.button1').click(function () {
+                $('.checkbox').prop({
+                    checked: true
+                })
+            })
+
+            $('.button3').click(function () {
+                $('.checkbox').prop({
+                    checked: false
+                })
+            })
+
+
+            $('.button2').click(function () {
+                $('table').find('.checkbox').each(function () {
+                    if ($(this).prop('checked')) {
+                        $(this).prop('checked', false);
+                    }
+                    else {
+                        $(this).prop('checked', true);
+                    }
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+<input class="button1" type="button" value="全选" >
+<input class="button2" type="button" value="反选" >
+<input class="button3" type="button" value="取消" >
+<table border="1px">
+    <tr><td><input class="checkbox" type="checkbox"></td><td>mysql-001</td><td>10.10.8.10</td><td>15379</td></tr>
+    <tr><td><input class="checkbox" type="checkbox"></td><td>redis-001</td><td>10.10.8.10</td><td>15379</td></tr>
+    <tr><td><input class="checkbox" type="checkbox"></td><td>monitor-001</td><td>10.10.8.10</td><td>15379</td></tr>
+</table>
+</body>
+</html>
